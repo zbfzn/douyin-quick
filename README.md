@@ -7,4 +7,4 @@
 
 下载地址:https://raw.githubusercontent.com/zbfzn/douyinquick/master/DouyinQuickAPP/app-release.apk
 
-声明：软件仅供学习，切勿用于非法用途。（ps:软件较简单，解析源码在）
+声明：软件仅供学习，切勿用于非法用途。（ps:软件较简单）
