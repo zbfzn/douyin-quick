@@ -67,8 +67,8 @@ public class MyService extends Service {
                         Douyin douyin=new Douyin(share_url, new Douyin.DYCallBack() {
                             @Override
                             public void HttpSuccessDo(final Douyin douyin,boolean error) {
+                                progressDialog.hide();
                                 if(!error){
-                                    progressDialog.hide();
                                     ClipData data1=ClipData.newPlainText("douyin",douyin.getReal_url());
                                     clipboardManager.setPrimaryClip(data1);
                                     final AlertDialog alertDialog=new AlertDialog.Builder(getApplicationContext())
