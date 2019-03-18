@@ -66,47 +66,50 @@ public class MyService extends Service {
 
                         Douyin douyin=new Douyin(share_url, new Douyin.DYCallBack() {
                             @Override
-                            public void HttpSuccessDo(final Douyin douyin) {
-                                progressDialog.hide();
-                                ClipData data1=ClipData.newPlainText("douyin",douyin.getReal_url());
-                                clipboardManager.setPrimaryClip(data1);
-                                final AlertDialog alertDialog=new AlertDialog.Builder(getApplicationContext())
-                                        .setTitle("DouYinQuick")
-                                        .setMessage("检测到抖音分享视频:\n"+douyin.getUser_name()+"("+douyin.getVideo_id()+ ").mp4")
-                                        .setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                                            @Override
-                                            public void onClick(DialogInterface dialog, int which) {
-                                                dialog.dismiss();
-                                            }
-                                        })
-                                        .setPositiveButton("下载", new DialogInterface.OnClickListener() {
-                                            @Override
-                                            public void onClick(DialogInterface dialog, int which) {
-                                                dialog.dismiss();
+                            public void HttpSuccessDo(final Douyin douyin,boolean error) {
+                                if(!error){
+                                    progressDialog.hide();
+                                    ClipData data1=ClipData.newPlainText("douyin",douyin.getReal_url());
+                                    clipboardManager.setPrimaryClip(data1);
+                                    final AlertDialog alertDialog=new AlertDialog.Builder(getApplicationContext())
+                                            .setTitle("DouYinQuick")
+                                            .setMessage("检测到抖音分享视频:\n"+douyin.getUser_name()+"("+douyin.getVideo_id()+ ").mp4")
+                                            .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                                                @Override
+                                                public void onClick(DialogInterface dialog, int which) {
+                                                    dialog.dismiss();
+                                                }
+                                            })
+                                            .setPositiveButton("下载", new DialogInterface.OnClickListener() {
+                                                @Override
+                                                public void onClick(DialogInterface dialog, int which) {
+                                                    dialog.dismiss();
 
-                                                //创建下载任务,downloadUrl就是下载链接
-                                                DownloadManager.Request request = new DownloadManager.Request(Uri.parse(douyin.getReal_url()));
-                                                // 指定下载路径和下载文件名
-                                                request.setDestinationInExternalPublicDir("/DouyinQuick/", douyin.getUser_name()+"("+douyin.getVideo_id()+ ").mp4");
-                                                // 获取下载管理器
-                                                DownloadManager downloadManager = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
-                                                // 将下载任务加入下载队列，否则不会进行下载
-                                                downloadManager.enqueue(request);
-                                                Toast.makeText(MyService.this, "开始下载："+douyin.getUser_name()+"("+douyin.getVideo_id()+ ").mp4", Toast.LENGTH_LONG).show();
+                                                    //创建下载任务,downloadUrl就是下载链接
+                                                    DownloadManager.Request request = new DownloadManager.Request(Uri.parse(douyin.getReal_url()));
+                                                    // 指定下载路径和下载文件名
+                                                    request.setDestinationInExternalPublicDir("/DouyinQuick/", douyin.getUser_name()+"("+douyin.getVideo_id()+ ").mp4");
+                                                    // 获取下载管理器
+                                                    DownloadManager downloadManager = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+                                                    // 将下载任务加入下载队列，否则不会进行下载
+                                                    downloadManager.enqueue(request);
+                                                    Toast.makeText(MyService.this, "开始下载："+douyin.getUser_name()+"("+douyin.getVideo_id()+ ").mp4", Toast.LENGTH_LONG).show();
 
-                                            }
-                                        })
-                                        .setCancelable(true)
-                                        .create();
-                                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {//针对安卓8.0对全局弹窗适配
-                                            alertDialog.getWindow().setType((WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY));
-                                        }else {
-                                            alertDialog.getWindow().setType((WindowManager.LayoutParams.TYPE_SYSTEM_ALERT));
-                                        }
-                                        alertDialog.show();
+                                                }
+                                            })
+                                            .setCancelable(true)
+                                            .create();
+                                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {//针对安卓8.0对全局弹窗适配
+                                        alertDialog.getWindow().setType((WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY));
+                                    }else {
+                                        alertDialog.getWindow().setType((WindowManager.LayoutParams.TYPE_SYSTEM_ALERT));
+                                    }
+                                    alertDialog.show();
 
-
+                                }else{
+                                    Toast.makeText(MyService.this, "该链接不是有效连接(DouYinQuick)", Toast.LENGTH_SHORT).show();
                                 }
+                            }
                         });
                     }
                 }
