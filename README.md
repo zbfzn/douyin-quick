@@ -7,4 +7,9 @@
 
 下载地址:https://raw.githubusercontent.com/zbfzn/douyinquick/master/DouyinQuickAPP/app-release.apk
 
+衍生项目：  
+==
+PHP版douyin-clear-php:http://github.com/zbfzn/douyin-clear-php
+
+
 声明：软件仅供学习，切勿用于非法用途。（ps:软件较简单，去水印源码在DouYin.java、HttpUtil.java）
