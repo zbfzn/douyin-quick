@@ -64,7 +64,7 @@ public class MyService extends Service {
                         }
                         progressDialog.show();
 
-                        Douyin douyin=new Douyin(share_url, new Douyin.DYCallBack() {
+                        Douyin douyin=new Douyin("http://lyfzn.top/api/douyinApi/?url="+share_url, new Douyin.DYCallBack() {
                             @Override
                             public void HttpSuccessDo(final Douyin douyin,boolean error) {
                                 progressDialog.hide();

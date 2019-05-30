@@ -3,6 +3,9 @@ package top.lyfzn.music.douyinquick;
 
 import android.os.AsyncTask;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Attributes;
 import org.jsoup.nodes.Document;
@@ -10,7 +13,7 @@ import org.jsoup.nodes.Element;
 
 public class Douyin {
     private String user_name,video_id;
-    private String real_url,abstract_url;
+    private String real_url;
     private DYCallBack callBack;
 
     public Douyin( String share_url,  DYCallBack callBack){
@@ -32,9 +35,6 @@ public class Douyin {
         return real_url;
     }
 
-    public String getAbstract_url() {
-        return abstract_url;
-    }
 
     class DYtask extends AsyncTask<String,Void,String>{
 
@@ -46,18 +46,14 @@ public class Douyin {
         @Override
         protected void onPostExecute(String s) {
             try{
-                Document doc= Jsoup.parse(s);
-                Element e1= doc.select("#theVideo").get(0);
-                Attributes attrs =e1.attributes();
-                String src=attrs.get("src");
-                String src_no=src.replace("playwm","play");
-                String user=doc.select("#videoUser > div.user-info > p.user-info-name").get(0).text();
-                String id=src.split("video_id=|&line=0")[1];
+                JSONObject object= JSON.parseObject(s);
+                String src_no=object.getJSONArray("urls").getString(0);
+                String user=object.getString("nickname");
+                String id=object.getString("awemeId");
 
                 user_name=user;
                 video_id=id;
                 real_url=src_no;
-                abstract_url=src;
             }catch (Exception e){
                 callBack.HttpSuccessDo(Douyin.this,true);
                 return;

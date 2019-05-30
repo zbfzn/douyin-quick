@@ -23,7 +23,7 @@ private OkHttpClient okHttpClient=new OkHttpClient.Builder()
         Request request = new Request.Builder()
                 .url(request_url)//请求的url
                 .addHeader("Content-Type","text/html;charset=utf-8")
-                .addHeader("User-Agent","Mozilla/5.0 (Linux; Android 8.0.0; MI 6 Build/OPR1.170623.027; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/62.0.3202.84 Mobile Safari/537.36")
+//                .addHeader("User-Agent","Mozilla/5.0 (Linux; Android 9; MI 6 Build/PKQ1.190118.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/72.0.3626.121 Mobile Safari/537.36")
                 .get()
                 .build();
 
