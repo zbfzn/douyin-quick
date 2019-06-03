@@ -10,7 +10,7 @@
 
 下载地址:https://raw.githubusercontent.com/zbfzn/douyinquick/master/DouyinQuickAPP/app-release.apk
 
-衍生项目：  
+依附项目：  
 ==
 PHP版douyin-clear-php:http://github.com/zbfzn/douyin-clear-php
 
