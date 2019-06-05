@@ -115,24 +115,6 @@ public class MyService extends Service {
                                             }
                                         });
                                     }
-//                                    for(int i=1;i<=674;i++){
-//                                        //创建下载任务,downloadUrl就是下载链接
-//                                        String id="";
-//                                        if(i<10){
-//                                            id="00"+i;
-//                                        }else if(i>=10&&i<100){
-//                                            id="0"+i;
-//                                        }else {
-//                                            id=""+i;
-//                                        }
-//                                        DownloadManager.Request request = new DownloadManager.Request(Uri.parse("https://api.isoyu.com/uploads/beibei/beibei_0"+id+".jpg"));
-//                                        // 指定下载路径和下载文件名
-//                                        request.setDestinationInExternalPublicDir("/DouyinQuick/Images/", id+".jpg");
-//                                        // 获取下载管理器
-//                                        DownloadManager downloadManager = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
-//                                        // 将下载任务加入下载队列，否则不会进行下载
-//                                        downloadManager.enqueue(request);
-//                                    }
                                             AlertDialog alertDialog=ab.create();
                                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {//针对安卓8.0对全局弹窗适配
                                         alertDialog.getWindow().setType((WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY));
