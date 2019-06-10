@@ -11,7 +11,8 @@
 ![image](https://raw.githubusercontent.com/zbfzn/douyinquick/master/DouyinQuickAPP/2.png)
 ![image](https://raw.githubusercontent.com/zbfzn/douyinquick/master/DouyinQuickAPP/1.png)
 
-下载地址:https://raw.githubusercontent.com/zbfzn/douyinquick/master/DouyinQuickAPP/app-release.apk
+下载地址:https://raw.githubusercontent.com/zbfzn/douyinquick/master/DouyinQuickAPP/app-release.apk  
+注：有时候apk版本和代码版本不一致，请自行下载编译（AS）。
 
 依附项目：  
 ==
