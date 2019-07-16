@@ -12,14 +12,13 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="结束运行"/>
-    <TextView
+    <Button
+        android:id="@+id/about"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="关于"
+        android:layout_below="@id/stop_finish"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="30dp"
-        android:textColor="@color/colorAccent"
-        android:textSize="14sp"
-        android:text="本软件由（fzn）开发。如需使用请赋予相关权限，视频下载在DouyinQuick文件夹下，使用用户昵称+id命名，感谢使用。"/>
+        android:layout_marginTop="10dp"/>
 
 </RelativeLayout>
