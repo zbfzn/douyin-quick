@@ -19,7 +19,9 @@
 
 ![image](https://raw.githubusercontent.com/zbfzn/douyinquick/master/DouyinQuickAPP/01.png)
 
-下载地址v1.3:https://lyfzn.top/plugins/BO/tools/mysource/source/DouQuick-v1.3_sign.apk
+下载地址
+==
+v1.3:https://lyfzn.top/plugins/BO/tools/mysource/source/DouQuick-v1.3_sign.apk
 
 依附项目：  
 ==
