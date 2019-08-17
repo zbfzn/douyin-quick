@@ -6,7 +6,7 @@
 19-06-04:接口变更，修复完成  
 19-06-05:支持长视频(完整版)解析  
 19-07-16:优化界面  
-19-08-05：源代码里面的接口不再使用，如需使用本APP请下载新版[DouQuick-v1.4.apk](https://lyfzn.top/plugins/BO/tools/mysource/source/DouQuick-v1.3_sign.apk),想自己改的在MyService.java更换API（API在依附项目douyin-clear=php,自行下载部署），置old=1&isFormat=1即可使用;  
+19-08-05：源代码里面的接口不再使用，如需使用本APP请下载新版[DouQuick-v1.4.apk](https://lyfzn.top/plugins/BO/tools/mysource/source/DouQuick-v1.4_sign.apk),想自己改的在MyService.java更换API（API在依附项目douyin-clear=php,自行下载部署），置old=1&isFormat=1即可使用;  
 19-8-17：修复无水印解析接口，已更新至v1.4，v1.3版本将不能解析完整视频，请下载v1.4使用  
 
 优点：  
