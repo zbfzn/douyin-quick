@@ -22,7 +22,7 @@
 
 下载地址
 ==
-v1.3:https://lyfzn.top/plugins/BO/tools/mysource/source/DouQuick-v1.3_sign.apk
+v1.4:https://lyfzn.top/plugins/BO/tools/mysource/source/DouQuick-v1.4_sign.apk
 
 依附项目：  
 ==
